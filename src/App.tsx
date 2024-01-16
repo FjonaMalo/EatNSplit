@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
+import FriendList from "./components/FriendList";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hellooooo</h1>
+      <FriendList />
     </div>
   );
 }
