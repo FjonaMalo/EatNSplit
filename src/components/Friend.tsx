@@ -1,5 +1,6 @@
 import React from "react";
 import { FriendProps } from "../types";
+import Button from "./Button";
 
 const Friend = ({ friend }: FriendProps) => {
   console.log(friend);
@@ -20,7 +21,7 @@ const Friend = ({ friend }: FriendProps) => {
           </p>
         )}
         {friend.balance === 0 && <p>You and {friend.name} are even</p>}
-        <button className="select-button">Select</button>
+        <Button>Select</Button>
       </div>
     </li>
   );
