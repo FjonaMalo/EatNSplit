@@ -1,12 +1,16 @@
 import React from "react";
-import { initialFriends } from "../DummyData";
 import Friend from "./Friend";
+import { FriendTypes } from "../types";
 
-const FriendList = () => {
+interface FriendListProps {
+  friends: FriendTypes[];
+}
+
+const FriendList = ({ friends }: FriendListProps) => {
   return (
     <div>
       <ul>
-        {initialFriends.map((friend) => (
+        {friends.map((friend: FriendTypes) => (
           <Friend friend={friend} key={friend.id} />
         ))}
       </ul>
