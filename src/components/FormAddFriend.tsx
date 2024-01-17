@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import { FriendTypes } from "../types";
 
@@ -35,7 +35,6 @@ const FormAddFriend = ({ onAddFriend }: FormAddFriendProps) => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-
       <label className="form-label">Image URL</label>
       <input
         type="text"

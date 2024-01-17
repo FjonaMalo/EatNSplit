@@ -1,4 +1,3 @@
-import React from "react";
 import { FriendTypes } from "../types";
 import Button from "./Button";
 
@@ -10,7 +9,6 @@ interface FriendProps {
 
 const Friend = ({ friend, onSelection, selectedFriend }: FriendProps) => {
   console.log(friend);
-
   const isSelected = selectedFriend?.id === friend.id;
 
   return (
