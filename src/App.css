@@ -117,3 +117,17 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.friend-container-select {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: antiquewhite;
+}

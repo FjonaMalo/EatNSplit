@@ -7,8 +7,11 @@ import { initialFriends } from "./DummyData";
 import { FriendTypes } from "./types";
 
 function App() {
-  const [friends, setFriends] = useState(initialFriends);
-  const [showAddFriend, setShowAddFriend] = useState(false);
+  const [friends, setFriends] = useState<FriendTypes[]>(initialFriends);
+  const [showAddFriend, setShowAddFriend] = useState<boolean>(false);
+  const [selectedFriend, setSelectedFriend] = useState<FriendTypes | null>(
+    null
+  );
 
   const handleAddNewFriend = () => {
     setShowAddFriend(!showAddFriend);
@@ -19,16 +22,27 @@ function App() {
     setShowAddFriend(false);
   };
 
+  const handleSelection = (friend: FriendTypes | null) => {
+    setSelectedFriend((currentFriend) =>
+      currentFriend?.id === friend?.id ? null : friend
+    );
+    setShowAddFriend(false);
+  };
+
   return (
     <div className="App">
       <div>
-        <FriendList friends={friends} />
+        <FriendList
+          friends={friends}
+          onSelection={handleSelection}
+          selectedFriend={selectedFriend}
+        />
         {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleAddNewFriend}>
           {showAddFriend ? "Close" : "Add a friend"}
         </Button>
       </div>
-      <FormSplitBill />
+      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
     </div>
   );
 }
